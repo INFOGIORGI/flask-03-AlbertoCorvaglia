@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block altriLinks%}
+<a href="https://it.wikipedia.org/wiki/Pagina_principale" target="_blank">Wikipedia</a>
+{%endblock%}
+{%block body%}
+<table>
+    <tr>
+        <th>Prodotto</th>
+        <th>Scaffale</th>
+        <th>Prezzo</th>
+    </tr>
+    {%for p in prodotti%}
+        <tr>
+            <td>{{p[0]}}</td>
+            <td><a href="{{url_for('dettagliprodotto',scaffale=p[1])}}">{{p[1]}}</a></td>
+            <td>{{p[2]}}</td>
+        </tr>
+    {%endfor%}
+</table>
+{%endblock%}
